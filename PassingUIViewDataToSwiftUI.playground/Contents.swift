@@ -10,11 +10,11 @@ import SwiftUI
 import PlaygroundSupport
 
 struct ContentView: View {
-    @State var passingText : String = "UITextField value will appear here."
+    @State var passedText : String = "UITextField value will appear here."
     var body: some View {
         VStack {
-            Text("SwiftUI Text : \(passingText)")
-            UITextFieldObject(outputText: $passingText, placeholder: "This is UITextField object.")
+            Text("SwiftUI Text : \(passedText)")
+            UITextFieldObject(outputText: $passedText, placeholder: "This is UITextField object.")
         }
         .padding()
     }
