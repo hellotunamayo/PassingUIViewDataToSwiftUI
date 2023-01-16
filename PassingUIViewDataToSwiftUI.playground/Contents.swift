@@ -14,14 +14,14 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Text("SwiftUI Text : \(passingText)")
-            UITextFieldObject(passingText: $passingText, placeholder: "This is UITextField object.")
+            UITextFieldObject(outputText: $passingText, placeholder: "This is UITextField object.")
         }
         .padding()
     }
 }
 
 struct UITextFieldObject : UIViewRepresentable {
-    @Binding var passingText : String
+    @Binding var outputText : String
     let placeholder : String
 
     func makeUIView(context: Context) -> UITextField {
@@ -44,7 +44,7 @@ struct UITextFieldObject : UIViewRepresentable {
     }
 
     func makeCoordinator() -> Coordinator {
-        return Coordinator(passingText: $passingText)
+        return Coordinator(passingText: $outputText)
     }
 
     class Coordinator : NSObject, UITextFieldDelegate {
